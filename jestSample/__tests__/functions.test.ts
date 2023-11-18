@@ -13,9 +13,9 @@ describe('sum of array tests', () => {
         expect(sumOfArray(array)).toEqual(6);
     });
 
-    test('empty array throws error', () => {
+    test('empty array should return 0', () => {
         const array:number[] = [];
-        expect(() => {sumOfArray(array)}).toThrow();
+        expect(sumOfArray(array)).toEqual(0);
     });
 });
 
@@ -26,10 +26,9 @@ describe('async sum of array test', () => {
         expect(response).toBe(6);
     });
 
-    test('empty array fails with error', async () => {
-        expect.assertions(1);
+    test('empty array should return 0', async () => {
         const array:number[] = [];
-        await expect(asyncSumOfArray(array)).rejects.toThrow();
+        await expect(asyncSumOfArray(array)).resolves.toEqual(0);
     });
 });
 
